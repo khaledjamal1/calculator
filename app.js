@@ -25,8 +25,9 @@ oper.forEach(operation => operation.addEventListener("click", (e) =>{
     handleoperation(e.target.textContent)
 }))
 function handleoperation(op){
-    if(currentnum != ""){
+    if(prenum != ""){
         calculate()
+        
     }
     operation = op 
     prenum = currentnum
@@ -50,6 +51,7 @@ function calculate() {
     }
     currentnum = prenum
     current.textContent = prenum
+    prenum=""
     pred.textContent = ""
 }
 const ac = document.querySelector(".ac")
