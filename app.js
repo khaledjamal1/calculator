@@ -25,11 +25,15 @@ oper.forEach(operation => operation.addEventListener("click", (e) =>{
     handleoperation(e.target.textContent)
 }))
 function handleoperation(op){
+    if(currentnum != ""){
+        calculate()
+    }
     operation = op 
     prenum = currentnum
     currentnum = ""
     current.textContent = ""
     pred.textContent = prenum + op
+    
 }
 equal.addEventListener("click", calculate)
 function calculate() {
